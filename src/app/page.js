@@ -1,5 +1,5 @@
 import { fetchAllProducts } from "@/actions";
-import ProductCard from "./components/product-card";
+import ProductCard from "../components/product-card";
 
 
 
