@@ -1,5 +1,7 @@
 'use server'
 
+import { signIn, signOut } from "@/auth";
+
 
 //get all products
 
@@ -36,7 +38,7 @@ export async function fetchProductDetails(currentProductId) {
 
         const data = await result.json();
         return data;
-        
+
     } catch (error) {
         console.log(error);
         return {
@@ -44,4 +46,12 @@ export async function fetchProductDetails(currentProductId) {
             message: 'Something went wrong! Please try again'
         }
     }
+}
+
+export async function loginAction() {
+    await signIn('github');
+}
+
+export async function logoutAction() {
+    await signOut();
 }

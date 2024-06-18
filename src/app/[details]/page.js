@@ -1,9 +1,16 @@
 import { fetchProductDetails } from "@/actions";
+import { auth } from "@/auth";
 import AddToCarDButton from "@/components/add-to-card-button";
-
+import { redirect } from "next/navigation";
 
 
 const ProductDetails = async ({ params }) => {
+
+    const getSession = await auth();
+
+    if (!getSession?.user) {
+        redirect('/unauth-page');
+    }
 
     const getProductDetails = await fetchProductDetails(params.details);
     console.log(getProductDetails, 'getProductDetails');
