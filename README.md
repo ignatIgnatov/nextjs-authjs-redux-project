@@ -28,6 +28,7 @@ You would need the following tools installed before running the project locally:
 6. In .env.local file add the following:
 
    ```
+   DATABASE_URL={YOUR_MONGODB_DATABASE_URL}
    AUTH_SECRET={YOUR AUTH_SECRET}
    AUTH_GITHUB_ID={YOUR GITHUB_ID}
    AUTH_GITHUB_SECRET={YOUR GITHUB_SECRET}
